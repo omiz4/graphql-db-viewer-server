@@ -1,0 +1,15 @@
+input ListRecordsInput {
+    uuid: UUID!
+    table: [TableType!]!
+}
+
+interface MyDBTable {
+    iid: Int!
+    sid: String!
+    uuid: UUID!
+    created_at: DateTime!
+}
+
+extend type Query {
+    mydb_records(input: ListRecordsInput!): [MyDBTable!]!
+}

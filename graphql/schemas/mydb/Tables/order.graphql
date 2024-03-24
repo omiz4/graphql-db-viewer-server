@@ -1,0 +1,11 @@
+type Order implements Node & MyDBTable {
+    id: ID! @goField(forceResolver: true)
+
+    iid: Int!
+    sid: String!
+    uuid: UUID!
+    created_at: DateTime!
+
+    updated_at: DateTime
+    deleted_at: DateTime
+}
